@@ -1,0 +1,164 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    background-color:#F5F5F5;
+    background-image:linear-gradient(top, #A7A7A7 0%, #F5F5F5 51%);
+    background-image:-webkit-linear-gradient(top, #A7A7A7 0%, #F5F5F5 51%);
+    background-image:-ms-linear-gradient(top, #A7A7A7 0%, #F5F5F5 51%);
+    background-image:-webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(0, #A7A7A7),
+        color-stop(0.51, #F5F5F5)
+    );
+    background-attachment:fixed;
+    font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+    font-size:12px;
+    height:100%;
+    margin:0px;
+    padding:0px;
+    text-transform:uppercase;
+    width:100%;
+}
+
+/* Portrait layout (default) */
+.app {
+    position: relative;             /* position in the center of the screen */
+    left:0;
+    text-align:center;
+    padding: 180px 30px 30px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin: 0 auto;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+h1.logo {
+    background:url(../img/rei-logo.gif) no-repeat center top; /* 256px x 100px */
+    text-indent: -9999px; 
+    width: 256px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+.main-links {
+    list-style: none;
+    padding: 0;
+}
+.main-links li > a.btn {
+    background: #8DC63F;
+}
+.btn {
+    display: block;
+    color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    webkit-border-radius: 6px;
+}
+.fb.btn {
+    background: #3b5999;
+}
+.icon-facebook {
+    display: inline-block;
+    height: 30px;
+    border-radius: 6px;
+    width: 30px;
+}
+.header .back {
+    text-shadow: rgba(0, 0, 0, 0.4) 0 -1px 1px;
+    -webkit-border-radius: 0.286em;
+    -moz-border-radius: 0.286em;
+    border-radius: 0.286em;
+    -o-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px 0 inset;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px 0 inset;
+    -moz-box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px 0 inset;
+    box-shadow: rgba(255, 255, 255, 0.2) 0 1px 1px 0 inset;
+    font-family: "HelveticaNeue", arial, helvetica sans-serif;
+    background: #9a1b27;
+    border: 1px #54100d solid;
+    display: none;
+    color: white;
+    font-size: 0.92em;
+    font-weight: bold;
+    letter-spacing: 0;
+    padding: 0.4em 0.6em 0.5em 0.6em;
+    position: absolute;
+    text-decoration: none;
+    text-transform: none;
+    top: 0.2em;
+    left: 0.5em;
+    -webkit-background-clip: padding-box;
+}
+.back {
+    display: block;
+}
